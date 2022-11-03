@@ -22,6 +22,8 @@ import FirstPageIcon from "@mui/icons-material/FirstPage";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import LastPageIcon from "@mui/icons-material/LastPage";
+import TextField from '@mui/material/TextField';
+import "~/CSS/Base.css";
 function TablePaginationActions(props) {
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
@@ -117,7 +119,12 @@ function ViewItems() {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
+    <>
+     <div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+  <label for="floatingTextarea">Comments</label>
+</div>
+      <TableContainer component={Paper}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
         <TableHead>
           <TableRow>
@@ -190,6 +197,8 @@ function ViewItems() {
         </TableFooter>
       </Table>
     </TableContainer>
+    </>
+  
   );
 }
 
