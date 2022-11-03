@@ -24,13 +24,13 @@ function Header() {
             className={cx("button")}
             leftIcon={<CropOriginalIcon fontSize="large" />}
           >
-            Shop profile
+            Thông tin người dùng
           </Button>
           <Button
             className={cx("button")}
             leftIcon={<LogoutIcon fontSize="large" />}
           >
-            Logout
+            Đăng xuất
           </Button>
         </div>
       </Poper>
@@ -61,7 +61,7 @@ function Header() {
                 src="https://firebasestorage.googleapis.com/v0/b/hostelmanagement-ae202.appspot.com/o/Avatar%2F000041.JPG?alt=media&token=4c9b1e96-b765-4265-9930-a4540a1b8230"
                 alt="avatar"
               />
-              <span className={cx("user-name")}>Tran Phu Son</span>
+              <span className={cx("user-name")}>Nguyen Cong Khanh</span>
             </div>
           </HeadlessTippy>
 

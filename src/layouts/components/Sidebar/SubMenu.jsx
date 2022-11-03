@@ -26,27 +26,8 @@ function SubMenu({ item, openNavigation }) {
             {item.title}
           </div>
         </NavLink>
-        <div
-          className={
-            openNavigation ? cx("arrow-icon", "display") : cx("arrow-icon")
-          }
-        >
-          {item.subNav && openSubNav ? item.iconClosed : item.iconOpened}
-        </div>
       </div>
-      {!openNavigation &&
-        openSubNav &&
-        item.subNav &&
-        item.subNav.map((nav, index) => (
-          <NavLink
-            key={index}
-            to={nav.path}
-            className={(nav) => cx("sub-item", { active: nav.isActive })}
-          >
-            <div className={cx("icon")}></div>
-            <div className={cx("sub-title")}>{nav.title}</div>
-          </NavLink>
-        ))}
+
     </div>
   );
 }

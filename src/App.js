@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
 import DefaultLayout from "./layouts";
-import { supplierRoutes } from "./routes";
+import { adminRoutes } from "./routes";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        {supplierRoutes.map((route, index) => {
+        {adminRoutes.map((route, index) => {
           const Page = route.component;
 
           let Layout = DefaultLayout;

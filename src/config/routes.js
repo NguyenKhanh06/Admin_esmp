@@ -1,23 +1,26 @@
 const routes = {
   login: "/login",
-
   home: "/",
 
   //products
-  viewProducts: "/viewProducts",
-  addProduct: "/addProduct",
+  viewItems: "/viewItems",
+  detailItem: "/detailItem/:id",
 
   //orders
   viewOrders: "/viewOrders",
   ordersCancel: "/ordersCancel",
+//store
+  viewStores: "/viewStores",
+  detailStore: "/detailStore/:id",
 
-  //shop
-  shopProfile: "/shopProfile",
+  //user
+  viewUsers: "/viewUsers",
+  detailUser: "/detailUser/:id",
+
+
   reports: "/reports",
 
   //setting
-  myAddresses: "/myAddresses",
-  settingShop: "/settingShop",
   account: "/account",
 };
 

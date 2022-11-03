@@ -1,16 +1,18 @@
 import config from "~/config";
-import Account from "~/pages/Account/Account";
-import AddProduct from "~/pages/AddProduct/AddProduct";
 import Home from "~/pages/Home/Home";
 import Login from "~/pages/Login/Login";
-import MyAddresses from "~/pages/MyAddresses/MyAddresses";
 import Reports from "~/pages/Reports/Reports";
-import SettingShop from "~/pages/SettingShop/SettingShop";
 import ShopProfile from "~/pages/ShopProfile/ShopProfile";
 import ViewOrders from "~/pages/ViewOrders/ViewOrders";
-import ViewProducts from "~/pages/ViewProducts/ViewProducts";
+import ViewItems from "~/pages/ViewItems/ViewItems";
+import ViewStores from "~/pages/ViewStore/ViewStores";
+import ViewUsers from "~/pages/ViewUser/ViewUsers";
+import DetailItem from "~/pages/ViewItems/DetailItem";
+import DetailStore from "~/pages/ViewStore/DetailStore";
+import DetailUser from "~/pages/ViewUser/DetailUser";
+const supplierRoutes = [];
 
-const supplierRoutes = [
+const adminRoutes = [
   {
     path: config.routes.login,
     component: Login,
@@ -21,39 +23,37 @@ const supplierRoutes = [
     component: Home,
   },
   {
-    path: config.routes.viewProducts,
-    component: ViewProducts,
-  },
-  {
-    path: config.routes.addProduct,
-    component: AddProduct,
+    path: config.routes.viewItems,
+    component: ViewItems,
   },
   {
     path: config.routes.viewOrders,
     component: ViewOrders,
   },
   {
-    path: config.routes.shopProfile,
-    component: ShopProfile,
+    path: config.routes.viewStores,
+    component: ViewStores,
+  },
+  {
+    path: config.routes.viewUsers,
+    component: ViewUsers,
+  },
+  {
+    path: config.routes.detailItem,
+    component: DetailItem,
+  },
+  {
+    path: config.routes.detailStore,
+    component: DetailStore,
+  },
+  {
+    path: config.routes.detailUser,
+    component: DetailUser,
   },
   {
     path: config.routes.reports,
     component: Reports,
   },
-  {
-    path: config.routes.myAddresses,
-    component: MyAddresses,
-  },
-  {
-    path: config.routes.settingShop,
-    component: SettingShop,
-  },
-  {
-    path: config.routes.account,
-    component: Account,
-  },
 ];
-
-const adminRoutes = [];
 
 export { supplierRoutes, adminRoutes };
