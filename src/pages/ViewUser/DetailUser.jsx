@@ -6,6 +6,12 @@ import UserApi from "~/assets/API/UserAPI";
 import Moment from 'moment';
 import "~/CSS/User.css";
 import "~/CSS/Base.css";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
 
 DetailUser.propTypes = {
     
@@ -18,6 +24,15 @@ function DetailUser(props) {
         addresses: [{}],
       });
       const userID = useParams();
+      const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   const formatDate = Moment().format('DD-MM-YYYY')
   const fetchData = async () => {
     await axios
@@ -129,7 +144,47 @@ function DetailUser(props) {
         
                           <div class="profile-info-value" style={{ color: User.isActive ? "green" : "red" }}>
                             <span> {User.isActive ? "Hoạt động" : "Đã khóa"}</span>
-                            <Link
+                            <Dialog
+                          open={open}
+                          onClose={handleClose}
+                          aria-labelledby="alert-dialog-title"
+                          aria-describedby="alert-dialog-description"
+                        >
+                          <DialogTitle id="alert-dialog-title">
+                            {"Bạn chắc chứ?"}
+                          </DialogTitle>
+                          <DialogContent>
+                            <DialogContentText id="alert-dialog-description">
+                              {User.isActive
+                                ? "Bạn muốn khóa người dùng"
+                                : "Bạn muốn mở khoá người dùng"}
+                            </DialogContentText>
+                          </DialogContent>
+                          <DialogActions>
+                            <Button onClick={handleClose}>Hủy</Button>
+                            <Button
+                              onClick={() => {
+                                User.isActive
+                                  ? UpdateStatus_Block().then(handleClose())
+                                  : UpdateStatus_Active().then(handleClose());
+                              }}
+                              autoFocus
+                            >
+                              Đồng ý
+                            </Button>
+                          </DialogActions>
+                        </Dialog>
+                        <Button
+                          className="status_btn btn btn--primary"
+                          onClick={() => {
+                            handleClickOpen();
+                          }}
+                        >
+                         {User.isActive
+                    ? "Khóa người dùng"
+                    : "Mở khóa người dùng"}
+                        </Button>
+                            {/* <Link
                   className="btn btn--primary"
                   onClick={() => {
                     User.isActive
@@ -140,7 +195,7 @@ function DetailUser(props) {
                   {User.isActive
                     ? "Khóa người dùng"
                     : "Mở khóa người dùng"}
-                </Link>
+                </Link> */}
                           </div>
         
                         </div>

@@ -1,0 +1,12 @@
+.feedback_user_infor{
+    display: flex;
+    align-items: center;
+}
+.img_fb{
+ padding: 15px;
+    width: 100px;
+    height: 100px;
+}
+.list_img_fb{
+    display: flex;
+}

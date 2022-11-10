@@ -25,4 +25,9 @@ export const SidebarData = [
     icon: <StorefrontIcon fontSize="large" />,
     path: config.routes.viewStores,
   },
+  {
+    title: "Đơn hàng",
+    icon: <StorefrontIcon fontSize="large" />,
+    path: config.routes.viewOrders,
+  },
 ];

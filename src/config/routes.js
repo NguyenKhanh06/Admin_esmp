@@ -9,6 +9,7 @@ const routes = {
   //orders
   viewOrders: "/viewOrders",
   ordersCancel: "/ordersCancel",
+  detailOrder: "/detailOrder/:id",
 //store
   viewStores: "/viewStores",
   detailStore: "/detailStore/:id",

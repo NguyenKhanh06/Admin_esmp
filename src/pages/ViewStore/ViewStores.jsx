@@ -120,6 +120,8 @@ function ViewStores(props) {
       .finally(() => {});
   }, []);
   return (
+    <>
+    <div>Danh sách cửa hàng</div>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
         <TableHead>
@@ -190,6 +192,7 @@ function ViewStores(props) {
         </TableFooter>
       </Table>
     </TableContainer>
+    </>
   );
 }
 

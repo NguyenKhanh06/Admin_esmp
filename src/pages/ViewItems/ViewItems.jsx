@@ -120,10 +120,7 @@ function ViewItems() {
 
   return (
     <>
-     <div class="form-floating">
-  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-  <label for="floatingTextarea">Comments</label>
-</div>
+
       <TableContainer component={Paper}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
         <TableHead>
@@ -144,7 +141,7 @@ function ViewItems() {
               )
             : ItemList
           ).map((Item) => (
-            <TableRow key={Item.itemID}>
+            <TableRow hover key={Item.itemID}>
               <TableCell component="th" scope="row">
                 <Link
                   style={{ color: "blue" }}

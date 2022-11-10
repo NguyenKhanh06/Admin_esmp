@@ -10,6 +10,7 @@ import ViewUsers from "~/pages/ViewUser/ViewUsers";
 import DetailItem from "~/pages/ViewItems/DetailItem";
 import DetailStore from "~/pages/ViewStore/DetailStore";
 import DetailUser from "~/pages/ViewUser/DetailUser";
+import DetailOrder from "~/pages/ViewOrders/DetailOrder";
 const supplierRoutes = [];
 
 const adminRoutes = [
@@ -49,6 +50,10 @@ const adminRoutes = [
   {
     path: config.routes.detailUser,
     component: DetailUser,
+  },
+  {
+    path: config.routes.detailOrder,
+    component: DetailOrder,
   },
   {
     path: config.routes.reports,
