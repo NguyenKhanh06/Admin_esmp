@@ -1,13 +1,22 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
+import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import DefaultLayout from "./layouts";
+import Authenticated from "./pages/Authenticated/Authenticated";
 import { adminRoutes } from "./routes";
 
 function App() {
+
+  const currentUser = useSelector((state) => state.account.current);
+
+  const [reload, setReload] = useState(false);
+
   return (
     <div className="App">
       <Routes>
-        {adminRoutes.map((route, index) => {
+
+      {!currentUser ? <Route path="/" element={<Authenticated reload={() => setReload(!reload)} />}/>:
+        adminRoutes.map((route, index) => {
           const Page = route.component;
 
           let Layout = DefaultLayout;

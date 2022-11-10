@@ -6,9 +6,13 @@ const accountApi = {
         const url = '/accounts/login_by_email/?firebaseToken=' + data;
         return axiosClient.post(url, data);
     },
+    login(data) {
+        const url = '/user/adminsign_in';
+        return axiosClient.post(url, data);
+    },
 
     getDetailAccountById(id) {
-        const token = axioClient.getToken();
+        const token = axiosClient.getToken();
         if (token) {
             axiosClient.setHeaderAuth(token)
             return axiosClient.get('/accounts/detail', id)

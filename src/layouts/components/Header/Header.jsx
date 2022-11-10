@@ -12,10 +12,21 @@ import Poper from "~/components/Poper";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import config from "~/config";
+import { useDispatch } from "react-redux";
+import { logout } from "~/pages/Authenticated/AccountSlice";
 
 const cx = classNames.bind(styles);
 
 function Header() {
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () =>{
+    const action = logout();
+    dispatch(action);
+  }
+
+
   const renderResult = (attrs) => (
     <div className={cx("pop-wrapper")} tabIndex="-1" {...attrs}>
       <Poper className={cx("menu-wrapper")}>
@@ -29,6 +40,7 @@ function Header() {
           <Button
             className={cx("button")}
             leftIcon={<LogoutIcon fontSize="large" />}
+            onClick={handleLogout}
           >
             Đăng xuất
           </Button>
